@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicio-balancearpod1
+spec:
+  selector:
+    app: pod1  # Reemplaza con la etiqueta del pod que deseas balancear
+  ports:
+    - protocol: TCP
+      port: 80  # Puerto del Service
+      targetPort: 80  # Puerto del pod
+  type: LoadBalancer

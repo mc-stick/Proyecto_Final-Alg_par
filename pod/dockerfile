@@ -1,0 +1,14 @@
+FROM node:14
+WORKDIR /
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD [ "node", "pod1.js" ]
+
+
+#docker build -t docker.io/joanmfv/pod1-img:v1
+#docker login
+# docker tag docker.io/joanmfv/pod1-img:v1 docker.io/joanmfv/pod1-img:v1
+# docker push docker.io/joanmfv/pod1-img:v1
+# docker run docker.io/joanmfv/pod1-img:v1
