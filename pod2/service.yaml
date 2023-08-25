@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pod-lineal-saltos-service
+  name: servicio-balancear
 spec:
   selector:
-    app: pod-lineal-saltos
+    app: pod2  # Reemplaza con la etiqueta del pod que deseas balancear
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 3000
+      port: 80  # Puerto del Service
+      targetPort: 80  # Puerto del pod
   type: LoadBalancer
